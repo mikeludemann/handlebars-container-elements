@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Application letter</title>
+	<script src="./../libs/handlebars.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+	<script id="curriculum_vitae-template" type="text/x-handlebars-template"> 
+		<div id="personal_data">
+			<div class="headline">
+				Personal Data
+			</div>
+			{{#users}}
+			<table>
+				<tr>
+					<td>Name</td><td>{{fullName person}}</td>
+				</tr>
+				<tr>
+					<td>Address</td><td>{{person.street}}<br/>{{person.postalcode}} {{person.place}}</td>
+				</tr>
+				<tr>
+					<td>Birthday</td><td>{{person.birthday}}</td>
+				</tr>
+				<tr>
+					<td>Place of birth</td><td>{{person.placeOfBirth}}</td>
+				</tr>
+				<tr>
+					<td>Nationality</td><td>{{person.nationality}}</td>
+				</tr>
+				<tr>
+					<td>Father</td><td>{{person.father.name}}, {{person.father.age}}, {{person.father.job}}</td>
+				</tr>
+				<tr>
+					<td>Mother</td><td>{{person.mother.name}}, {{person.mother.age}}, {{person.mother.job}}</td>
+				</tr>
+				{{#each person.siblings}}
+				<tr>
+					<td>Siblings</td><td>{{name}}, {{age}}, {{job}}</td>
+				</tr>
+				{{/each}}
+			</table>
+			{{/users}}
+		</div>
+		<hr/>
+		<div id="school_data">
+			<div class="headline">
+				School data
+			</div>
+			<table>
+				{{#each school.education}}
+				<tr>
+					<td>{{from}} - {{until}}</td><td>{{school}}, {{place}}, {{graduation}}</td>
+				</tr>
+				{{/each}}
+			</table>
+		</div>
+		<hr/>
+		<div id="initial_continuing_education">
+			<div class="headline">
+				Training
+			</div>
+			<table>
+				{{#each training.job}}
+				<tr>
+					<td>{{from}} - {{until}}</td><td>{{company}}, {{place}}, {{graduation}}, {{subject}}</td>
+				</tr>
+				{{/each}}
+			</table>
+			<table>
+				{{#each training.study}}
+				<tr>
+					<td>{{from}} - {{until}}</td><td>{{company}}, {{place}}, {{graduation}}, {{subject}}</td>
+				</tr>
+				{{/each}}
+			</table>
+		</div>
+		<hr/>
+		<div id="work_experience">
+			<div class="headline">
+				Work experience
+			</div>
+			<table>
+				{{#each work_experience.education}}
+				<tr>
+					<td>{{from}} - {{until}}</td><td>{{company}}, {{place}}, {{subject}}</td>
+				</tr>
+				{{/each}}
+			</table>
+		</div>
+		<hr/>
+		<div id="further_education">
+			<div class="headline">
+				Further Education
+			</div>
+			<table>
+				{{#each further_education.education}}
+				<tr>
+					<td>{{from}} - {{until}}</td><td>{{company}}, {{place}}, {{subject}}</td>
+				</tr>
+				{{/each}}
+			</table>
+		</div>
+		<hr/>
+		<div id="practical_experience">
+			<div class="headline">
+				Practical Education
+			</div>
+			<table>
+				{{#each practical_experience.education}}
+				<tr>
+					<td>{{from}} - {{until}}</td><td>{{company}}, {{place}}, {{subject}}</td>
+				</tr>
+				{{/each}}
+			</table>
+		</div> 
+		<hr/>
+		<div id="social">
+			<div class="headline">
+				Social
+			</div>
+			<table>
+				{{#each social.facility}}
+				<tr>
+					<td>{{from}} - {{until}}</td><td>{{company}}, {{place}}, {{subject}}</td>
+				</tr>
+				{{/each}}
+			</table>
+		</div> 
+	</script>
+	<script src="config-start.js"></script>
+	<script src="data.js"></script>
+	<script src="helper.js"></script>
+	<script src="config-end.js"></script>
+</body>
+
+</html>

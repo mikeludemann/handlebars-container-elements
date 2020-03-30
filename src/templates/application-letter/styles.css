@@ -1,0 +1,30 @@
+#contact {
+	margin: 5px;
+}
+
+#date_of_create {
+	margin: 30px 5px;
+	width: 100%;
+	text-align: right;
+}
+
+#description_of_job {
+	margin: 20px 5px;
+	font-weight: bold;
+}
+
+#description_of_application {
+	margin: 40px 5px;
+}
+
+#salutation {
+	margin: 10px 0px;
+}
+
+.text {
+	margin: 15px 0px;
+}
+
+#greeting, #fullName {
+	margin: 20px 5px;
+}

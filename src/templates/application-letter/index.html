@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Application letter</title>
+	<script src="./../libs/handlebars.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+	<script id="application_letter-template" type="text/x-handlebars-template"> 
+		<div id="contact">
+			{{#users}}
+			<div>{{fullName person}}</div>
+			<div>{{person.street}}</div>
+			<div>{{person.postalcode}}</div>
+			<div>{{person.place}}</div>
+			<div>
+				<span>E-Mail: </span>
+				<a href="mailto:{{person.mail}}">{{person.mail}}</a>
+			</div>
+			{{/users}}
+		</div>
+		<div id="date_of_create">
+			{{fullDate}}
+		</div>
+		<div id="description_of_job">
+			{{#if placeToWork}}
+				<div>Application: {{job}} in {{placeToWork}} at {{startDate}}</div>
+			{{else}}
+				<div>Application: {{job}}</div>
+			{{/if}}
+		</div>
+		<div id="description_of_application">
+			{{#context}}
+				<div id="salutation">{{salutation}}</div>
+				{{#each blocks}}
+					<div class="text">{{text}}</div>
+				{{/each}} 
+			{{/context}}
+		</div>
+		<div id="greeting">
+			{{greeting}}
+		</div>
+		<div id="fullName">
+			{{fullName users.person}}
+		</div> 
+	</script>
+	<script src="config-start.js"></script>
+	<script src="data.js"></script>
+	<script src="helper.js"></script>
+	<script src="config-end.js"></script>
+</body>
+
+</html>
